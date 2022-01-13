@@ -1,0 +1,26 @@
+MinGL : https://github.com/alain13100/MinGL2_IUT_AIX
+
+Auteurs :
+github.com/Thomas776 (Moi)
+https://github.com/imuny0
+https://github.com/Neotaku67
+
+Conventions à suivre :
+camelCase pour les noms de variables/fonctions/fichiers
+PascalCase pour les noms de classes/structures
+Nommage en anglais
+Pas de fonctions de +100 lignes
+Les guards sont de cette forme : GUARD_<filename>_H
+Lors d'un include, on utilise <> pour la STD, "" pour nos fichiers/MinGL
+
+Concernant les const :
+Afin de limiter l'utilisation du mot const (pour garder une certaine lisibilité du code), les cas suivants n'ont pas besoin d'etre déclarés comme const :
+- déclaration/définition de fonctions : les types primitifs/valeurs d'enum passés par valeurs ne sont pas notés const
+
+écran : constante 1280x720
+
+
+Reminder : les missiles sont tirés par les envahisseurs, et les torpilles par le joueur
+
+Quelques unes des problèmes rencontrés :
+- La sépararation entre l'affichage et la logique nous force à calculer les positions 2 fois (pour le bounc checking, et le l'affichage)'

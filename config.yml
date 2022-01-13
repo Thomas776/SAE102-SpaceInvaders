@@ -1,0 +1,209 @@
+#############################
+#                           #
+#   General configuration   #
+#                           #
+#############################
+# 
+# The setting maxFPS defines the maximum refresh rate at which the game will
+# run for a pleasant experience it should be above 30
+# maxFPS: 30
+#
+# The theme setting defines which theme will be used during gameplay session.
+# For a more custom experience use the 'bad' theme, for a more eye pleasant
+# experience use the 'good' theme.
+#
+general:
+ maxFPS: 30
+ theme: good
+
+
+#############################
+#                           #
+#    Player configuration   #
+#                           #
+#############################
+#
+#  # General player configuration
+#    Thoses settings will affect all players
+# 
+# The width setting sets how wide will the players be during the gameplay 
+# session. This setting is ignored in if the theme is set to "good"
+# width: 70 
+#
+# The startXPostion setting sets where will the players spawn at the beginning
+# of the gameplay session, its in pixel relative to the left side of the screen
+# for the first player, and to the right side of the screen for the second
+# player
+# startXPosition: 600 
+# 
+# The fireCooldown setting sets how many frames the players will have to wait
+# before they can shoot again
+# fireCooldown: 10
+#
+# The speed setting sets how many pixel will the players move when they hit
+# their movement keys
+# speed: 10 
+#
+# The lives settings sets how many life points will have all players durring
+# gameplay session
+# lives: 3
+#
+# Player specific configuration 
+# Those are the personal setting of each player
+#
+# The color setting will set the color of the player during gameplay session
+# the supported values are "black","white","red","lime","blue","yellow","cyan"
+# "magenta","silver","gray","maroon","olive","green","purple","teal","navy"
+# color : red
+#
+# The keys settings will define the key configuration of the player
+# the keys must be non function keys (F1 -> F12)
+# The keys used for menu navigation are hardcoded to be "zqsd"
+# we weren't sure if the best choice was to do that, or to add yet again another config section
+# keys:
+#   left: q
+#   right: d
+#   shoot: s
+
+players:
+ width: 70
+ startXPosition: 600
+ fireCooldown: 10
+ speed: 10
+ lives: 3
+ user1:
+  color: red
+  keys:
+   left: q
+   right: d
+   shoot: s
+ user2:
+  color: blue
+  keys:
+   left: k
+   right: m
+   shoot: l
+
+
+#############################
+#                           #
+#   Invader configuration   #
+#                           #
+#############################
+#
+#  # Invader general configuration
+#    Those settings will affect all invaders
+#
+# The fireCooldown setting sets how many frames the invaders will have to wait
+# before they can shoot again, be aware that this setting is not representative
+# of how often the invaders will shoot as there is a part of random
+# fireCooldown: 0
+#
+# The size setting sets the size of the radius of the invaders in pixel
+# This setting is ignored in if the theme is set to "good"
+# size: 30
+#
+# The speed setting sets how many pixel will the invaders move each frame
+# speed : 7
+#
+# The distance settings sets the distance in pixel between invaders
+# distance: 15
+#
+#
+#
+#  # Invader specific configuration
+#    Those setting will affect a specific type of invader
+#
+# The point setting sets how many points will a player get by defeating this invader
+# points: 100
+#
+# The color setting set what color this type of invader will be the supported
+# colors are "black","white","red","lime","blue","yellow","cyan" "magenta",
+# "silver","gray","maroon","olive","green","purple","teal","navy"
+# color : green
+#
+# exemple:
+# typeA:
+#  points: 100
+#  color: green
+
+invaders:
+ fireCooldown: 0
+ size: 30
+ speed: 7
+ distance: 15
+
+ typeA:
+  points: 100
+  color: green
+ typeB:
+  points: 250
+  color: blue
+ typeC:
+  points: 600
+  color: red
+
+
+#############################
+#                           #
+# Projectiles configuration #
+#                           #
+#############################
+#
+# # Projectiles configuration
+#   The settings are the same between torpedoes and missiles
+#
+# The color setting sets which color the projectile will be the supported
+# colors are "black","white","red","lime","blue","yellow","cyan" "magenta",
+# "silver","gray","maroon","olive","green","purple","teal","navy"
+# color: yellow
+#
+# The speed settings set how many pixel will the projectile will move in a 
+# frame
+# speed: 10
+#
+# The width setting set how wide in pixel will the projectile be
+# This setting is ignored in if the theme is set to "good"
+# width : 10 
+#
+projectiles:
+ missiles:
+  color: yellow
+  speed: 10
+  width: 10
+ torpedos:
+  color: green
+  speed: 10
+  width: 10
+
+
+#############################
+#                           #
+#     Grid configuration    #
+#                           #
+#############################
+#
+# # Grid configuration 
+#   The grid configuration defines how and where the invaders will be placed
+#   during the gameplay session. Its a list of string where a character in the
+#   string can be one of theses values : 
+#   - ' ' : the space character for empty
+#   - 'A' : the 'A' character for a type A invader
+#   - 'B' : the 'B' character for a type B invader
+#   - 'C' : the 'C' character for a type C invader
+#
+#   The grid can have an unlimited number of rows and each row can have an
+#   unlimited number of invaders
+#
+# Example
+# - "CAAA AAAAAA AAAC"
+# - "CBBBBB    BBBBBC"
+# - "CCCCCCCCCCCCCCCC"
+#
+grid:
+ - "CAAA AAAAAA AAAC"
+ - "CBBBBB    BBBBBC"
+ - "CCCCCCCCCCCCCCCC"
+
+
+ # God is not in configuration because you can't control a god
